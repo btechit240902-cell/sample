@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Two Step Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="form-box">
+        <h2>Contact Us</h2>
+
+        <!-- Step 1 -->
+        <div id="step1" class="step active">
+            <input type="text" placeholder="Enter your Name" required>
+            <input type="email" placeholder="Enter your Email" required>
+            <button onclick="nextStep()">Next</button>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="step2" class="step">
+            <textarea placeholder="Enter your Message" rows="4"></textarea>
+            <button onclick="prevStep()" class="back">Back</button>
+            <button class="submit">Submit</button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function nextStep() {
+    document.getElementById("step1").classList.remove("active");
+    document.getElementById("step2").classList.add("active");
+}
+
+function prevStep() {
+    document.getElementById("step2").classList.remove("active");
+    document.getElementById("step1").classList.add("active");
+}
+</script>
+
+</body>
+</html>
